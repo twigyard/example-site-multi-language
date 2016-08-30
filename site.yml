@@ -1,0 +1,34 @@
+imports:
+    - { resource: 'staging.yml' }
+
+url:
+    canonical: example-site-multi-language
+    extra: []
+
+locale:
+    default:
+        key: cs
+        name: cs_CZ
+    extra: { en: en_US }
+
+data:
+    products: products.yml
+
+tracking:
+    google_analytics: UA-example_ga_id
+
+router:
+    index:
+        cs_CZ: /
+        en_US: /
+    product:
+        cs_CZ: /zbozi/{product_slug | products:cs.slug}
+        en_US: /products/{product_slug | products:en.slug}
+    contact:
+        cs_CZ: /kontakt
+        en_US: /contact
+
+renderer:
+    index: index.html.twig
+    product: product.html.twig
+    contact: contact.html.twig

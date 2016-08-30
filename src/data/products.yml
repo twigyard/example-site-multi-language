@@ -1,0 +1,20 @@
+-   id: 1
+    image: carrot.jpg
+    en:
+        name: Carrot
+        slug: carrot
+        desc: Carrots are tasty and healthy.
+    cs:
+        name: Mrkev
+        slug: mrkev
+        desc: Mrkev je dobrá a zdravá.
+-   id: 2
+    image: apple.jpg
+    cs:
+        name: Jablko
+        slug: jablko
+        desc: Jablka jsou červená a kulatá.
+    en:
+        name: Apple
+        slug: apple
+        desc: Apples are round and red.

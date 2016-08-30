@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+
+{% set prod = '' %}
+{% for product in data.products if product.cs.slug == url_params.product_slug %}
+    {% set prod = product %}
+{% endfor %}
+
+{% block languages %}
+    <a href ="{{ path(page, { 'product_slug': prod.cs.slug }, 'cs_CZ') }}">Cs</a>
+    <a href ="{{ path(page, { 'product_slug': prod.en.slug }, 'en_US') }}">En</a>
+{% endblock %}
+
+{% block content %}
+    {{ prod.cs.name }}<br />
+    {{ prod.cs.desc }}<br />
+    <img src="{{ image('images/' ~ prod.image) }}" />
+{% endblock %}
