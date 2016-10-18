@@ -1,6 +1,3 @@
-imports:
-    - { resource: 'staging.yml' }
-
 url:
     canonical: example-site-multi-language
     extra: []

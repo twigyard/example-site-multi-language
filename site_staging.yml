@@ -1,3 +1,6 @@
+imports:
+    - { resource: 'site.yml' }
+
 httpauth:
     username: user
     password: pass
