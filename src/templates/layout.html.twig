@@ -5,15 +5,15 @@
 
     <body>
     <p>GoogleAnalytics tracking code {{ trackingIds.google_analytics }}</p>
-    <h5>{{  'Languages'|trans }}</h5>
+    <h5>{{  'Languages'|trans }}:</h5>
     {% block languages %}
         <a href ="{{ path(page, {}, 'cs_CZ') }}">Cs</a>
         <a href ="{{ path(page, {}, 'en_US') }}">En</a>
     {% endblock %}
 
-    <h5>{{ 'Pages:'|trans }}</h5>
-    <a href="{{ path('index') }}">Home</a>
-    <a href="{{ path('contact') }}">{{ 'Contact:'|trans }}</a>
+    <h5>{{ 'Pages'|trans }}:</h5>
+    <a href="{{ path('index') }}">{{ 'Home'|trans }}</a>
+    <a href="{{ path('contact') }}">{{ 'Contact'|trans }}</a>
 
     <hr>
 
