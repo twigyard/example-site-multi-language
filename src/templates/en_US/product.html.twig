@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+{% extends '_layouts/base.html.twig' %}
 
 {% set prod = '' %}
 {% for product in data.products if product.en.slug == url_params.product_slug %}
@@ -6,12 +6,14 @@
 {% endfor %}
 
 {% block languages %}
-    <a href ="{{ path(page, { 'product_slug': prod.cs.slug }, 'cs_CZ') }}">Cs</a>
-    <a href ="{{ path(page, { 'product_slug': prod.en.slug }, 'en_US') }}">En</a>
+    <ul class="languages">
+        <li{% if locale == 'cs_CZ' %} class="active"{% endif %}><a href ="{{ path(page, { 'product_slug': prod.cs.slug }, 'cs_CZ') }}">CS</a></li>
+        <li{% if locale == 'en_US' %} class="active"{% endif %}><a href ="{{ path(page, { 'product_slug': prod.en.slug }, 'en_US') }}">EN</a></li>
+    </ul>
 {% endblock %}
 
 {% block content %}
-    {{ prod.en.name }}<br />
-    {{ prod.en.desc }}<br />
-    <img src="{{ image('images/' ~ prod.image) }}" />
+    <h2>{{ prod.en.name }}</h2>
+    <p>{{ prod.en.desc }}</p>
+    <img src="{{ image('images/' ~ prod.image) }}" class="img-responsive" />
 {% endblock %}
