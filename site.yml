@@ -38,7 +38,7 @@ form:
                 - NotBlank: ~
 
 tracking:
-    google_analytics: UA-example_ga_id
+    google_analytics: js/google-analytics.js
 
 router:
     index:
@@ -55,3 +55,22 @@ renderer:
     index: index.html.twig
     product: product.html.twig
     contact: contact.html.twig
+
+header:
+    'Content-Security-Policy':
+        'default-src':
+            - "'self'"
+        'font-src':
+            - "'self'"
+            - "*.gstatic.com"
+        'img-src':
+            - "'self'"
+            - "www.google-analytics.com"
+        'script-src':
+            - "'self'"
+            - "*.googleapis.com"
+            - "www.google-analytics.com"
+        'style-src':
+            - "'self'"
+            - "'unsafe-inline'"
+            - "*.googleapis.com"
