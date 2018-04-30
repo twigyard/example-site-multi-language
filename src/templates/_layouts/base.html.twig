@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>TwigYard {{ 'Example'|trans }}</title>
     <link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css" />
-    <!-- GoogleAnalytics tracking code {{ trackingIds.google_analytics }} -->
+    {% if tracking.google_analytics is not empty %}
+        <script src="{{ asset(tracking.google_analytics) }}"></script>
+    {% endif %}
 </head>
 <body>
     <header>
