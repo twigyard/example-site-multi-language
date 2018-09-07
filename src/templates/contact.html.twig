@@ -17,7 +17,7 @@
             {% endif %}
         </div>
         <div>
-            <label for="name">{{ 'Name'|trans }} </label>
+            <label for="name">{{ 'Name'|trans }}:</label>
             <input type="text" id="name" name="contact[name]" value="{{ form.contact.data.name }}" />
             {% if form.contact.errors['name'] is defined %}
                 <ul class="error">
